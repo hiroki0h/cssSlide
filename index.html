@@ -1,0 +1,72 @@
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>slide</title>
+</head>
+<body>
+<style>
+    * {padding:0; margin:0; box-sizing: border-box;}
+    ul,li {list-style:none;}
+    #wrapper  {max-width: 500px; padding: 50px 20px; margin: 0 auto;}
+    #slide {height:300px; overflow:hidden; position:relative;}
+    #slide ul {width:500%; height:100%; transition:1s;}
+    #slide ul:after {content:""; clear:both; display:block;}
+    #slide li {width:20%; height:100%; float:left;}
+    #slide li:nth-child(1) {background:goldenrod;}
+    #slide li:nth-child(2) {background:rebeccapurple;}
+    #slide li:nth-child(3) {background:palevioletred;}
+    #slide li:nth-child(4) {background:khaki;}
+    #slide li:nth-child(5) {background:darkblue;}
+    #slide input {display:none;}
+    #slide label {
+        width:20px;
+        height:20px;
+        border:2px solid #666;
+        border-radius:50%;
+        background:#fff;
+        transition:0.3s;
+        cursor:pointer;
+        display:inline-block;
+    }
+    #slide .motion_btn {
+        width:100%;
+        text-align:center;
+        position:absolute;
+        bottom:10px;
+        left:0;
+    }
+    #motion_btn01:checked~ul {margin-left:0%;}
+    #motion_btn02:checked~ul {margin-left:-100%;}
+    #motion_btn03:checked~ul {margin-left:-200%;}
+    #motion_btn04:checked~ul {margin-left:-300%;}
+    #motion_btn05:checked~ul {margin-left:-400%;}
+    #motion_btn01:checked~.motion_btn>label:nth-child(1) {background:#666;}
+    #motion_btn02:checked~.motion_btn>label:nth-child(2) {background:#666;}
+    #motion_btn03:checked~.motion_btn>label:nth-child(3) {background:#666;}
+    #motion_btn04:checked~.motion_btn>label:nth-child(4) {background:#666;}
+    #motion_btn05:checked~.motion_btn>label:nth-child(5) {background:#666;}
+</style>
+<div id="wrapper">
+    <div id="slide">
+        <input type="radio" name="motion_btn" id="motion_btn01" checked>
+        <input type="radio" name="motion_btn" id="motion_btn02">
+        <input type="radio" name="motion_btn" id="motion_btn03">
+        <input type="radio" name="motion_btn" id="motion_btn04">
+        <input type="radio" name="motion_btn" id="motion_btn05">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="motion_btn">
+            <label for="motion_btn01"></label>
+            <label for="motion_btn02"></label>
+            <label for="motion_btn03"></label>
+            <label for="motion_btn04"></label>
+            <label for="motion_btn05"></label>
+    </div>
+</div>
+</body>
+</html>
